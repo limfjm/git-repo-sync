@@ -18,7 +18,7 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: pwd; ls -al; chmod 777 entrypoint.sh; ls -al; ./entrypoint.sh
+    - run: pwd; ls -al; chmod 777 ${{ github.action_path }}/entrypoint.sh; ls -al; ${{ github.action_path }}/entrypoint.sh
       shell: bash
       env:
         INPUT_TARGET_URL: ${{ inputs.target-url }}
